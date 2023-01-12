@@ -85,18 +85,15 @@ const handleSubmit = async (e) => {
 
   //fetch data from server -> bot's response
 
-  const response = await fetch(
-    "code-h-backend-4a2nr27f5-harshgurehiya.vercel.app",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        prompt: data.get("prompt"),
-      }),
-    }
-  );
+  const response = await fetch("https://codeh-24g3.onrender.com", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      prompt: data.get("prompt"),
+    }),
+  });
 
   clearInterval(loadInterval);
   messageDiv.innerHTML = "";
