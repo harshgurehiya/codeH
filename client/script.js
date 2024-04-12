@@ -25,7 +25,7 @@ function typeText(element, text) {
 
   let interval = setInterval(() => {
     if (index < text.length) {
-      element.innerHTML += text.charAt(index); //chartAt brings character at specific index in the text that AI will return.
+      element.innerHTML += text.charAt(index); //charAt brings character at specific index in the text that AI will return.
       index++;
     } else {
       clearInterval(interval);
@@ -85,7 +85,7 @@ const handleSubmit = async (e) => {
 
   //fetch data from server -> bot's response
 
-  const response = await fetch("https://codeh-gt9d.onrender.com", {
+  const response = await fetch("http://localhost:5000/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
